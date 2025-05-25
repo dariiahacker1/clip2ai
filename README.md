@@ -1,4 +1,5 @@
-# 📋 clip2ai — Your Silent AI Clipboard Assistant
+# 📋 clip2ai — Your Silent AI Clipboard Assistant 
+### Copy. Hotkey. Paste. Genius.
 
 Send prompts from your clipboard to OpenAI, and get the response instantly back — copied to your clipboard.  
 A silent, local AI assistant powered by GPT.
@@ -28,11 +29,12 @@ You can bind the script to a custom keyboard shortcut through your system settin
 
 ---
 
-## 🧠 How It Works
+## 🚀 How It Works:
 
-1. A `Flask` server receives prompts and queries the GPT-4o model.
-2. A script reads from your clipboard, sends the prompt to the server, and copies the result back.
-3. Optionally, a desktop notification confirms the result.
+- Copy your exam question (`⌘ + C`)
+- Run clip2ai (`⌘ + 🚀`)
+- Paste the answer (`⌘ + V`)
+- Profit (while looking suspiciously relaxed)
 
 ---
 
