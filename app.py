@@ -4,10 +4,12 @@ import pyperclip as pc
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 CORS(app)
 
 api = os.getenv('OPENAI_API_KEY')
@@ -25,9 +27,12 @@ def generate_response():
         if not prompt:
             return jsonify({'error': 'No prompt provided'}), 400
 
+        escaped_prompt = prompt.encode('unicode_escape').decode('utf-8')
+        print(escaped_prompt)
+
         response = client.chat.completions.create(
             model="gpt-4o",
-            messages=[{"role": "user", "content": prompt}]
+            messages=[{"role": "user", "content": escaped_prompt}]
         )
 
         generated_text = response.choices[0].message.content.strip()
@@ -44,3 +49,4 @@ def generate_response():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
