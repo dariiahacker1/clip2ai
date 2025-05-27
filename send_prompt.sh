@@ -16,3 +16,5 @@ print(data.get('response') or f'ERROR: {data.get(\"error\", \"Unknown error\")}'
 
 # Copy result to clipboard
 echo "$generated" | pbcopy
+
+
