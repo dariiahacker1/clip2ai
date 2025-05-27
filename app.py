@@ -4,7 +4,6 @@ import pyperclip as pc
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
-import json
 
 load_dotenv()
 
@@ -45,4 +44,6 @@ def generate_response():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
+    
 
