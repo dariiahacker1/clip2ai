@@ -60,7 +60,7 @@ def generate_response():
 def generate_code_response():
     """Endpoint for code generation"""
     data = request.get_json()
-    system_msg = system_msg = """
+    system_msg = """
         You are a code generator. Follow these rules:
         1. Return only raw code
         2. Never add comments
