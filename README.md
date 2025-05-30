@@ -14,9 +14,10 @@ Send prompts from your clipboard to OpenAI, and get the response instantly back 
 
 ---
 
-## ⌨️ Full Automation with Keyboard Shortcut
+## ⌨️ Full Automation with Keyboard Shortcut 
 
-You can bind the script to a custom keyboard shortcut through your system settings for instant, one-key AI responses.
+You can bind the script to a custom keyboard shortcut for instant, one-key AI responses.  
+On **macOS**, this can be done easily using the **Automator** or **Shortcuts** app.
 
 ---
 
