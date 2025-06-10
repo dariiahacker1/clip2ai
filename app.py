@@ -29,9 +29,19 @@ def generate_content(prompt, system_message=None):
     )
 
     generated_text = response.choices[0].message.content.strip()
-    pc.copy(generated_text)
-    print(generated_text)
-    return generated_text
+    lines = generated_text.splitlines()
+
+    if lines and lines[0].strip().startswith("`"):
+        lines.pop(0)
+
+    if lines and lines[-1].strip().startswith("`"):
+        lines.pop()
+
+    cleaned_text = "\n".join(lines).strip()
+
+    pc.copy(cleaned_text)
+    print(cleaned_text)
+    return cleaned_text
 
 
 def handle_request(prompt, system_message=None):
@@ -66,9 +76,12 @@ def generate_code_response():
         2. Never add comments
         3. Never include explanations
         4. Never use markdown formatting
-        5. Maintain original code indentation
+        5. No markdown (no ```)
+        6. Maintain original code indentation
     """
     return handle_request(data.get('prompt'), system_msg)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
+
