@@ -76,8 +76,7 @@ def generate_code_response():
         2. Never add comments
         3. Never include explanations
         4. Never use markdown formatting
-        5. No markdown (no ```)
-        6. Maintain original code indentation
+        5. Maintain original code indentation
     """
     return handle_request(data.get('prompt'), system_msg)
 
